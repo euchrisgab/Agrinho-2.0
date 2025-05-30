@@ -17,7 +17,6 @@
     font-family: var(--font-body);
 }
 
-/* Corpo da página */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -34,6 +33,7 @@ p {
 
 img {
     max-width: 90%;
+    
 }
 
 
