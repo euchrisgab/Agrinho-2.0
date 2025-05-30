@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+<style>
+.nav-link.active {
+    background: #0dcaf0;
+    color: #fff !important;
+    border-radius: 8px;
+}
+</style>
+
+
+
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impacto do Reflorestamento</title>
@@ -9,11 +23,50 @@
 </head>
 
 <body class="bg-info bg-gradient text-center">
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav .nav-link");
+
+    window.addEventListener("scroll", function() {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 80;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="container" style="max-width: 900px;">
     <header>
         <p class="fs-1">Impacto do Reflorestamento</p>
-<img src="cataratas-do-iguacu-19.jpg" class="rounded mx-auto d-block" style="width: 700px;" alt="Cataratas do Iguaçu">  
+<img src="cataratas-do-iguacu-19.jpg" class="rounded mx-auto d-block" style="width: 700px;" alt="Cataratas do Iguaçu">
    <p>O reflorestamento promove benefícios para o meio ambiente e para a vida das pessoas, ajudando a reduzir enchentes, regular a temperatura e melhorar a qualidade de vida.</p>
        <nav>
     <ul class="nav justify-content-center mb-3">
@@ -77,16 +130,45 @@
         <section id="conclusao" class="conteudo">
             <h2>Conclusão</h2>
             <p>O reflorestamento traz benefícios diretos para a vida humana e o planeta. Investir em plantar árvores, recuperar áreas degradadas e adotar práticas sustentáveis é essencial para garantir um futuro equilibrado e saudável para todos.</p>
-            <iframe width="560" height="315" src='https://www.youtube.com/watch?v=K2fWriB0DT8' title="YouTube video."></iframe>
-        </section>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K2fWriB0DT8" title="Vídeo explicativo sobre o impacto do reflorestamento" frameborder="0" allowfullscreen></iframe>        </section>
     </main>
 
     <footer>
         <p>2025 |@ euchrisgab </p>
     </footer>
     </div>
-    </div>
+
+
+
+
+
+
+</div>
+
+
+<button id="topBtn" class="btn btn-primary position-fixed" style="right: 20px; bottom: 20px; display: none;">Topo</button>
+<script>
+const topBtn = document.getElementById('topBtn');
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+};
+topBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+</script>
+
+
+
+
 </body>
+
+
+
+
 
 </html>
 
